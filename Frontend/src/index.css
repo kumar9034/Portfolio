@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+.font-serifpro {
+  font-family: 'Source Serif Pro', serif;
+}
+
+/* styles.css */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}

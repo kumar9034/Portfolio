@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(express.urlencoded( { extended: true,} ));
 
 app.use(cookieParser());
-app.use(cors({origin: "http://localhost:5173",  // ✅ sirf React frontend
+app.use(cors({origin: "https://webcoder-beta.vercel.app/",  // ✅ sirf React frontend
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true}));
 app.use(helmet());

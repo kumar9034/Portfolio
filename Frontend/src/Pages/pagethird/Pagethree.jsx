@@ -8,7 +8,7 @@ import { ProjectContext } from "../../components/ContextAPI";
 const Pagethree = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate()
-  const {setProject_id} = useContext(ProjectContext)
+  const { setProject_id } = useContext(ProjectContext)
 
   const fetchProjects = async () => {
     try {
@@ -24,15 +24,16 @@ const Pagethree = () => {
   useEffect(() => {
     fetchProjects();
   }, []);
-const handlebutton = (id, name)=>{
-  navigate(`/${name}/${id}`)
-  setProject_id(id)
-}
+  const handlebutton = (id, name) => {
+    navigate(`/${name}/${id}`)
+    setProject_id(id)
+    localStorage.setItem("project_id", id)
+  }
 
   return (
     <div>
       <Header />
-      <div className="w-full h-auto sm:px-20 px-5 py-10">
+      <div className="w-full h-auto sm:px-20 px-5 py-10 mt-10">
         <div className="flex justify-between">
           <div>
             <h1 className="sm:text-lg text-sm font-serifpro font-[700]">
@@ -56,32 +57,34 @@ const handlebutton = (id, name)=>{
             {data.length > 0 ? (
               data.map((project) => (
                 <div
-                onClick={()=>handlebutton(project._id, project.name)}
+                  onClick={() => handlebutton(project._id, project.name)}
                   key={project._id}
-                  className="sm:w-[30%] w-[95%] h-auto border-[1px] border-[#DCD6D6] px-7 py-7 rounded-2xl hover:scale-95 cursor-pointer hover:shadow-[-10px_10px_20px_rgba(0,0,0,0.10)] transition-transform transform duration-300"
+                  className="sm:w-[30%] w-[95%] h-auto  bg-gradient-to-tr from-[#CB7700] to-[#FFD68D] text-white border-[1px] border-[#DCD6D6] px-7 py-7 rounded-2xl hover:scale-98 cursor-pointer hover:shadow-[-10px_10px_20px_rgba(0,0,0,0.10)] transition-transform transform duration-300"
                 >
-                  <div className="w-full h-auto rounded-sm overflow-hidden border-1 border-[#DCD6D6]">
+                  <div className="w-full h-auto rounded-sm overflow-hidden  ">
                     <img
                       src={project.image}
                       alt={project.name}
-                      className="w-full h-full object-contain hover:scale-109 transition-transform duration-300 "
+                      className="w-full h-full object-contain  hover:scale-109 transition-transform duration-300"
                     />
                   </div>
-                  <h1 className="text-md font-serifpro font-bold mt-10">
-                    {project.name}
-                  </h1>
-                  <p className="text-[10px] font-serifpro italic line-clamp-2">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mt-3">
-                    {project.tool.split(",").map((tool, idx) => (
-                      <div
-                        key={idx}
-                        className="px-2 py-1 bg-[#F5F2F2] shadow-lg text-[8px] font-serifpro italic rounded"
-                      >
-                        {tool.trim()}
-                      </div>
-                    ))}
+                  <div>
+                    <h1 className="text-md font-serifpro font-bold mt-10">
+                      {project.name}
+                    </h1>
+                    <p className="text-[10px] font-serifpro italic line-clamp-2">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-3 text-black">
+                      {project.tool.split(",").map((tool, idx) => (
+                        <div
+                          key={idx}
+                          className="px-2 py-1 bg-[#F5F2F2] shadow-lg text-[8px] font-serifpro italic rounded"
+                        >
+                          {tool.trim()}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               ))

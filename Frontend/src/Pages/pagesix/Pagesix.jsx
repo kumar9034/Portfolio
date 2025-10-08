@@ -58,7 +58,7 @@ const handlefile = async (e)=>{
   return (
     <div>
       <Header />
-      <div className='w-full h-auto sm:p-15 px-5 py-10 '>
+      <div className='w-full h-auto sm:p-15 px-5 py-10 mt-10 '>
         <div className='shadow-xl border border-[#938F8F] w-full h-full rounded-lg sm:flex '>
           <div className='flex flex-col gap-4 sm:w-[40%] w-full h-full px-10 py-10'>
             <div className='flex flex-col gap-2'>

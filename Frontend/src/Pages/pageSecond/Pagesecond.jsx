@@ -6,7 +6,7 @@ const Pagesecond = () => {
   return (
     <div>
       <Header/>
-      <div className='w-full h-auto sm:px-22 px-5 py-10 '>
+      <div className='w-full h-auto sm:px-22 px-5 py-10 mt-10'>
         <div>
             <h1 className='sm:text-2xl text-lg italic font-serifpro font-[600]'>About me</h1>
             <p className='sm:text-lg text-sm mt-5 font-serifpro italic   '>

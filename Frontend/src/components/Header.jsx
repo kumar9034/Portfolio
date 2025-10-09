@@ -43,11 +43,11 @@ const Header = () => {
             onClick={() => navigate("/")}
             className="flex items-center gap-3 cursor-pointer"
           >
-            <div className="sm:w-[47px] w-[35px] sm:h-[46px] h-[35px] bg-gradient-to-r from-[#FFD66E] to-[#FE9502] rounded-full text-white flex items-center justify-center font-semibold">
+            <div className="sm:w-[47px] w-[35px] sm:h-[46px] h-[35px] bg-gradient-to-r sm:text-[14px] text-[12px] from-[#FFD66E] to-[#FE9502] rounded-full text-white flex items-center justify-center font-semibold">
               RK
             </div>
             <div className="flex flex-col">
-              <span className=" w-[8rem] font-serifpro italic sm:text-[21px] text-[15px] font-black">
+              <span className=" w-[8rem] font-serifpro italic sm:text-[18px] text-[15px] font-black">
                 Rahul Kumar
               </span>
               <span className="font-serifpro italic sm:text-[11px] text-[8px] -mt-1">
@@ -66,7 +66,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex gap-8">
+          <nav className="hidden md:flex gap-8 ">
             {links.map((link) => (
               <Link
                 to={link === "Home" ? "/" : `/${link.toLowerCase()}`}
@@ -74,7 +74,7 @@ const Header = () => {
               >
                 <span
                   onClick={() => setActive(link)}
-                  className={`font-serifpro italic text-sm font-semibold transition-colors duration-300 cursor-pointer ${
+                  className={`font-serifpro italic text-sm font-semibold transition-colors mt-2 duration-300 cursor-pointer ${
                     active === link ? "text-[#786F6F]" : "text-[#1A1A1A]"
                   }`}
                 >
@@ -82,14 +82,14 @@ const Header = () => {
                 </span>
               </Link>
             ))}
-          </nav>
-
           {/* Desktop Button */}
           <a href="CV.pdf" target="_blank" rel="noopener noreferrer">
             <button className="hidden md:block h-10 rounded-lg text-white cursor-pointer font-semibold hover:shadow-lg hover:scale-95 transform transition-transform duration-300 px-4 py-1 bg-gradient-to-r from-[#FFD66E] to-[#FE9502] font-serifpro italic">
               Download CV
             </button>
           </a>
+          </nav>
+
         </div>
       </header>
 

@@ -5,7 +5,7 @@ const Hero = () => {
     const navigate = useNavigate()
     return (
         <div className='sm:flex mt-10 '>
-            <div className='sm:w-[60%] w-full h-auto mt-10   sm:px-15 px-8 py-5'>
+            <div className='sm:w-[60%] w-full h-auto mt-15   sm:px-15 px-8 py-5'>
                 <span className=' sm:text-[17px] text-[14px] text-[#FF9C00] font-serifpro font-[500] '>
                     Hello - I'm
                 </span>

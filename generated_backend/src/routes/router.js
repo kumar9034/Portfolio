@@ -55,7 +55,6 @@ router.get("/allprojects", async (req, res) => {
 
 router.get("/detailproject/:id",async(req, res)=>{
     const projectid = req.params.id
-    console.log(projectid)
     if (!projectid || projectid === "null" || !mongoose.Types.ObjectId.isValid(projectid)) {
       return res.status(400).json({ error: "Invalid project id" });
     }

@@ -24,7 +24,7 @@ const Project = () => {
 
   const handlebutton = (id, name) => {
     navigate(`/${name}/${id}`)
-    setProject_id(id)
+    localStorage.setItem("project_id", id)
   }
   return (
     <div className='sm:w-full w-auto h-auto sm:px-15 px-8 py-10'>

@@ -27,9 +27,23 @@ app.use(express.json());
 app.use(express.urlencoded( { extended: true,} ));
 
 app.use(cookieParser());
-app.use(cors({origin: process.env.FRONTEND_URL,  // ✅ sirf React frontend
+const allowedOrigins = [
+  "https://webcoder-beta.vercel.app",
+  "https://portfolio-nu-orpin-30.vercel.app",
+  "http://localhost:5173" // for local development (optional)
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true}));
+  credentials: true
+}));
 app.use(helmet());
 
 
